@@ -22,9 +22,13 @@ public class GameController : MonoBehaviour
   [SerializeField] private float nextLevel = 10f;
   [SerializeField] private TextMeshProUGUI levelUI;
 
+  [SerializeField] private AudioClip levelUpAudio;
+
+  private Vector3 cameraPosition;
+
   void Start()
   {
-        
+    cameraPosition = Camera.main.transform.position;
   }
 
   void Update()
@@ -36,7 +40,7 @@ public class GameController : MonoBehaviour
 
   private void Score()
   {
-    score += Time.deltaTime;
+    score += Time.deltaTime * level;
 
     scoreUI.text = Mathf.Round(score).ToString();
   }
@@ -49,6 +53,7 @@ public class GameController : MonoBehaviour
     {
       level++;
       nextLevel *= 2;
+      AudioSource.PlayClipAtPoint(levelUpAudio, cameraPosition);
     }
   }
 
@@ -58,9 +63,14 @@ public class GameController : MonoBehaviour
 
     if (timer <= 0)
     {
-      timer = Random.Range(tMin, tMax);
+      timer = Random.Range(tMin / level, tMax);
       position.y = Random.Range(-limitY, limitY);
       Instantiate(obstacle, position, Quaternion.identity);
     }
+  }
+
+  public int ReturnLevel()
+  {
+    return level;
   }
 }

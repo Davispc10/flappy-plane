@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
   private Rigidbody2D rd;
   [SerializeField] private float velocity = 5f;
+  
+  [SerializeField] private GameObject puff;
 
   void Start()
   {
@@ -17,14 +21,22 @@ public class PlayerController : MonoBehaviour
   {
     UpPlayer();
     VelocityLimit();
+    LoseOnGoOutScreen();
   }
 
   public void UpPlayer()
   {
-    if (Input.GetKeyDown(KeyCode.Space))
+    if (Input.GetMouseButtonDown(0))
     {
       rd.velocity = Vector2.up * velocity;
+      CreatePuffPrefab();
     }
+  }
+
+  private void CreatePuffPrefab()
+  {
+    GameObject puffObject = Instantiate(puff, transform.position, Quaternion.identity);
+    Destroy(puffObject, 1f);
   }
 
   public void VelocityLimit()
@@ -32,6 +44,14 @@ public class PlayerController : MonoBehaviour
     if (rd.velocity.y < -velocity)
     {
       rd.velocity = Vector2.down * velocity;
+    }
+  }
+
+  private void LoseOnGoOutScreen()
+  {
+    if (transform.position.y > 5f ||  transform.position.y < -5f)
+    {
+      SceneManager.LoadScene(0);
     }
   }
 
