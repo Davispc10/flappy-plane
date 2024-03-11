@@ -5,7 +5,6 @@ using UnityEngine;
 public class BackgroundController : MonoBehaviour
 {
   private Renderer backShader;
-
   private float xOffset = 0f;
   private Vector2 textureOffset;
   [SerializeField] private float offsetVelocity = 0.1f;

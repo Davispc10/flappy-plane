@@ -15,6 +15,8 @@ public class BeginController : MonoBehaviour
     if (Input.GetMouseButton(0))
     {
       SceneManager.LoadScene(1);
+
+            //
     }
   }
 }
