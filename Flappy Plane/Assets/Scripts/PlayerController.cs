@@ -51,12 +51,12 @@ public class PlayerController : MonoBehaviour
   {
     if (transform.position.y > 5f ||  transform.position.y < -5f)
     {
-      SceneManager.LoadScene(0);
+      SceneManager.LoadScene(2);
     }
   }
 
   private void OnTriggerEnter2D(Collider2D collision)
   {
-    SceneManager.LoadScene(0);
+    SceneManager.LoadScene(2);
   }
 }

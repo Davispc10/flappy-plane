@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7872734729153648523
+--- !u!1 &2275918716183402613
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1708066338711255627}
-  - component: {fileID: 7645929206719751965}
+  - component: {fileID: 8472585629430128049}
+  - component: {fileID: 3559163609550705627}
   m_Layer: 0
-  m_Name: GameController
+  m_Name: GameManager
   m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1708066338711255627
+--- !u!4 &8472585629430128049
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7872734729153648523}
+  m_GameObject: {fileID: 2275918716183402613}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.65, y: 0, z: 0}
+  m_LocalPosition: {x: -2.2574673, y: 1.4096222, z: 2.5292501}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7645929206719751965
+--- !u!114 &3559163609550705627
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7872734729153648523}
+  m_GameObject: {fileID: 2275918716183402613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dabf02de643b0d74fb520f4c9f6fae66, type: 3}
+  m_Script: {fileID: 11500000, guid: 3aef2c89dcf57f24991ba6743837d402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 1
-  obstacle: {fileID: 7206100255296781938, guid: 14f18909770b8094a8d96536cf0c7356, type: 3}
-  position: {x: 10.65, y: 0, z: 0}
-  limitY: 1.64
-  tMin: 1
-  tMax: 2.5
-  scoreUI: {fileID: 0}
-  nextLevel: 10
-  levelUI: {fileID: 0}
-  levelUpAudio: {fileID: 8300000, guid: 082091854532133499c02faa8cc9013f, type: 3}
-  manager: {fileID: 0}
+  finalScore: 
+  finalLevel: 

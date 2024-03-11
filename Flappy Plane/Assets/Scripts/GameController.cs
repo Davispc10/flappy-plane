@@ -24,6 +24,8 @@ public class GameController : MonoBehaviour
 
   [SerializeField] private AudioClip levelUpAudio;
 
+  [SerializeField] private GameManager manager;
+
   private Vector3 cameraPosition;
 
   void Start()
@@ -41,13 +43,14 @@ public class GameController : MonoBehaviour
   private void Score()
   {
     score += Time.deltaTime * level;
-
     scoreUI.text = Mathf.Round(score).ToString();
+    manager.finalScore = scoreUI.text;
   }
 
   private void UpLevel()
   {
     levelUI.text = "Nível: " + level.ToString();
+    manager.finalLevel = levelUI.text;
 
     if (score > nextLevel)
     {
